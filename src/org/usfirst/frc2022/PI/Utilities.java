@@ -11,5 +11,14 @@ package org.usfirst.frc2022.PI;
  * @author Michael Hrcek
  */
 public class Utilities {
+
+    static String[] codes;
+    
+    public static String convertErrorToString(int error){
+        
+        String string = 
+        
+        return string;
+    }
     
 }
