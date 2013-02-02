@@ -32,14 +32,13 @@ public class ImageProcessor {
         
     }
     
-    public void processImage(){
+    public void processImage(int px, int py, int width, int height){
         colorLookzorPlugin.setAttribute("regionPX", 50);
         colorLookzorPlugin.setAttribute("regionPY", 50);
         colorLookzorPlugin.setAttribute("regionWidth", 10);
         colorLookzorPlugin.setAttribute("regionHeight", 10);
         colorLookzorPlugin.setAttribute("differenceColorRange", 10);
         colorLookzorPlugin.process(image, imageOut,attribute,mask,false);
-        MarvinImageIO.saveImage(imageOut, "./res/y.jpg");
         
     }
     
