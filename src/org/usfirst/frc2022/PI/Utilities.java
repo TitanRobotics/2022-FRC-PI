@@ -16,7 +16,8 @@ public class Utilities {
     
     public static String convertErrorToString(int error){
         
-        String string = 
+        String string;
+        string = "";
         
         return string;
     }
