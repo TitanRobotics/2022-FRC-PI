@@ -12,6 +12,8 @@ import java.net.Inet4Address;
  */
 public class BotCommand {
     
+    public SocketServer server;
+    
     public BotCommand(){
         
     }
@@ -31,12 +33,20 @@ public class BotCommand {
     
     public int send(){
         
-        return 666;
+        try{
+            //output from server
+            return 0;
+        } catch(Exception e){
+            e.printStackTrace();
+            return 404;
+        }
     }
 
     private int getType(String Type) {
         if(Type.equals("MOVEMENT")){
             return 1;
+        }else if(Type.equals("CAMOUTOFRANGE")){
+            return 2;
         }else{
             return 404;
         }
@@ -44,6 +54,10 @@ public class BotCommand {
 
     private String[] getAttributes(String atr) {
         throw new UnsupportedOperationException("Not yet implemented");
+    }
+
+    void setServer(SocketServer socket) {
+        server = socket;
     }
     
 }

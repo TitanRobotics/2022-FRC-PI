@@ -20,13 +20,14 @@ public class Program {
         PORT = 4444;
         socket = new SocketServer(PORT);
         socket.start();
-        
+        imageProcessor.commandProcessor.setServer(socket);
         
         if (socket.getConnectionStatus()){
             //imageProcessor.processImage();
             //input/output at socket.getInputStream/socket.getOutputStream()
             //TODO: send back info only if robot sends us something
             
+            //if requested then --> 
         }}
        
     }
