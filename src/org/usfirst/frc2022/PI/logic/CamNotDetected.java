@@ -4,11 +4,30 @@
  */
 package org.usfirst.frc2022.PI.logic;
 
+import java.net.Inet4Address;
+import marvin.image.MarvinImage;
+import org.usfirst.frc2022.PI.BotCommand;
+
 /**
  *
  * @author Michael
  */
 public class CamNotDetected implements LogicCamCore{
+
+    @Override
+    public boolean canFindCam(Inet4Address IP) {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    @Override
+    public boolean imageOutOfBounds(MarvinImage image) {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    @Override
+    public boolean sendCommandToBot(BotCommand command, Inet4Address IP) {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
     
     
     

@@ -15,18 +15,19 @@ public class Program {
     static int PORT;
     
     public static void main(String args[]){
-        
+        imageProcessor = new ImageProcessor();
+        if(Math.random()<0){
         PORT = 4444;
         socket = new SocketServer(PORT);
         socket.start();
         
-        imageProcessor = new ImageProcessor();
+        
         if (socket.getConnectionStatus()){
             //imageProcessor.processImage();
             //input/output at socket.getInputStream/socket.getOutputStream()
             //TODO: send back info only if robot sends us something
             
-        }
+        }}
        
     }
     
