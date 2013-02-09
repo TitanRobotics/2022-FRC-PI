@@ -43,8 +43,8 @@ public class FindGoal {
     }
 
     public void sendToProcess(BotCommand commandProcessor) {
-        commandProcessor.update("MOVEMENT",)
-        commandProcessor.create("MOVEMENT",)
+        commandProcessor.update("MOVEMENT","");
+        commandProcessor.create("MOVEMENT");
         int sendStatus = commandProcessor.send();
         
         if(sendStatus != 0){

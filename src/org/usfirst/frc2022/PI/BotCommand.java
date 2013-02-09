@@ -16,15 +16,16 @@ public class BotCommand {
         
     }
     
-    public void update(String Type, String[] atr){
+    public void update(String Type, String atr){
         int doCommand = getType(Type);
+        String[] attributes = getAttributes(atr);
         
         //use switch
         //update vars
         
     }
     
-    public void process(String Type){
+    public void create(String Type){
         
     }
     
@@ -34,6 +35,14 @@ public class BotCommand {
     }
 
     private int getType(String Type) {
+        if(Type.equals("MOVEMENT")){
+            return 1;
+        }else{
+            return 404;
+        }
+    }
+
+    private String[] getAttributes(String atr) {
         throw new UnsupportedOperationException("Not yet implemented");
     }
     
