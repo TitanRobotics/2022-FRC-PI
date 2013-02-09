@@ -16,9 +16,25 @@ public class BotCommand {
         
     }
     
-    private int send(){
+    public void update(String Type, String[] atr){
+        int doCommand = getType(Type);
+        
+        //use switch
+        //update vars
+        
+    }
+    
+    public void process(String Type){
+        
+    }
+    
+    public int send(){
         
         return 666;
+    }
+
+    private int getType(String Type) {
+        throw new UnsupportedOperationException("Not yet implemented");
     }
     
 }

@@ -19,6 +19,7 @@ import marvin.plugin.MarvinImagePlugin;
 import marvin.plugin.MarvinPlugin;
 import marvin.util.MarvinAttributes;
 import marvin.util.MarvinPluginLoader;
+import org.usfirst.frc2022.PI.logic.FindGoal;
 
 /**
  *
@@ -31,6 +32,8 @@ public class ImageProcessor {
     MarvinAttributes attribute = new MarvinAttributes();
     MarvinImageMask mask = MarvinImageMask.NULL_MASK;
     
+    FindGoal goalFinder;
+    BotCommand commandProcessor;
     
     public ImageProcessor(){
         try {           
@@ -51,14 +54,20 @@ public class ImageProcessor {
     }
     
     public void processImage(int px, int py, int width, int height){
-        colorLookzorPlugin.setAttribute("regionPX", 50);
-        colorLookzorPlugin.setAttribute("regionPY", 50);
-        colorLookzorPlugin.setAttribute("regionWidth", 10);
-        colorLookzorPlugin.setAttribute("regionHeight", 10);
+        colorLookzorPlugin.setAttribute("regionPX", px);
+        colorLookzorPlugin.setAttribute("regionPY", py);
+        colorLookzorPlugin.setAttribute("regionWidth", width);
+        colorLookzorPlugin.setAttribute("regionHeight", height);
         colorLookzorPlugin.setAttribute("differenceColorRange", 10);
         colorLookzorPlugin.process(image, imageOut,attribute,mask,false);
         
-        FindGoal
+        goalFinder.update(attribute, px, py);
+        goalFinder.process();
+        goalFinder.sendToProcess(commandProcessor);
+        
+    }
+    
+    public void setLocation(){
         
     }
     
