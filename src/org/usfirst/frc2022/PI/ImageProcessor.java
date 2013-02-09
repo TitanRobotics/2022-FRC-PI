@@ -35,13 +35,15 @@ public class ImageProcessor {
     public ImageProcessor(){
         try {           
             URL website = new URL("http://lh4.ggpht.com/-XaGtIYg-OfU/TQeOX4zxvTI/AAAAAAAABf4/gyPjEyXqFcc/s720/SDC10873.JPG");
-    ReadableByteChannel rbc = Channels.newChannel(website.openStream());
-    FileOutputStream fos = new FileOutputStream("img.jpg");
-    fos.getChannel().transferFrom(rbc, 0, 1 << 24);
+            
+            ReadableByteChannel rbc = Channels.newChannel(website.openStream());
+            FileOutputStream fos = new FileOutputStream("img.jpg");
+            fos.getChannel().transferFrom(rbc, 0, 1 << 24);
             
             image = MarvinImageIO.loadImage("img.jpg");
             imageOut = new MarvinImage(image.getHeight(),image.getWidth());
             colorLookzorPlugin = MarvinPluginLoader.loadImagePlugin("org.marvinproject.image.pattern.findColorPattern");
+            
         } catch (IOException ex) {
             Logger.getLogger(ImageProcessor.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -55,6 +57,8 @@ public class ImageProcessor {
         colorLookzorPlugin.setAttribute("regionHeight", 10);
         colorLookzorPlugin.setAttribute("differenceColorRange", 10);
         colorLookzorPlugin.process(image, imageOut,attribute,mask,false);
+        
+        FindGoal
         
     }
     
